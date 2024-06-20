@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* fonts */
+/* Noto Sans KR, ClashDisplay */
+
+/* Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@1,100..900&display=swap');
+/* ClashDisplay */
+@import url(../fonts/clash-display.css);
+
+:root {
+    /* 폰트 설정 */
+    --font-m-ko:"Noto Sans KR","Noto Sans",-apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
+    --font-m-en: 'ClashDisplay-Medium','ClashDisplay-Semibold','ClashDisplay-Bold',-apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
+    --font-pc-ko:"Noto Sans KR","Noto Sans",-apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    --font-pc-en: 'ClashDisplay-Medium','ClashDisplay-Semibold','ClashDisplay-Bold',-apple-system, BlinkMacSystemFont, "Helvetica Neue","Apple SD Gothic Neo", Arial, sans-serif;
+    
+    /* 폰트 크기 설정 */
+    --font-m-title: 25px;
+    --font-m-text: 14px;
+    
+    --font-pc-title: 30px;
+    --font-pc-text: 12px;
+
+    /* 폰트 두께 */
+    --font-bold: 700;
+    --font-semiBold: 600;
+    --font-medium: 500;
+    --font-regular: 400;
+    --font-light: 300;
+
+    /* 색상 설정 */
+    --color-element-1: #FFC63A;
+    --color-element-2: #F4ECE9; 
+    --color-element-3: #81BB41; 
+    --color-element-4: #C7E59E;
+    --color-element-5: #DE6673;
+    --color-element-6: #375D9D;
+    --color-element-7: #E3F4F9;
+
+    --color-white: #fff; 
+    --color-black: #13120F;
+}
