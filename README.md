@@ -8,8 +8,10 @@
 - 모바일버전 디자인 완료
 #### html
 - html 마크업<br>
+- GitHub Pages 생성<br>
+#### css
 - 폰트 설정 및 공통 css 작업<br>
-- GitHub Pages 생성
+- header, footer css 작업
 
 ## 240619
 #### 디자인
