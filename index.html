@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="./assets/style/common.css">
   <link rel="stylesheet" href="./assets/style/global.css">
   <!-- page 별 css style -->
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./index-mobile.css">
+  <link rel="stylesheet" href="./index-pc.css">
   <!-- jQuery -->
   <script src="./assets/js/jquery-3.6.0.min.js"></script>
   <script src="./assets/js/jquery-ui.min.js"></script>
@@ -57,18 +58,23 @@
   <!----------- main ---------->
   <section class="main-wrapper">
     <div class="main-title-box">
-      <h4>Icecream can change the world!</h4>
-      <h2>Ben &Jerry’s</h2>
-      <p>벤과 제리의 이야기는 1978년 뉴욕에서 시작되었습니다.
-        진하고 꾸덕한 식감과 우유 풍미, 달콤함을 강조한 맛의
-        프리미엄 아이스크림을 선보이는 글로벌 브랜드 <span>‘벤앤제리스’</span>입니다.</p>
-      <a class="view-flavors-btn" href="">VIEW FLAVORS</a>
+      <div class="main-title">
+        <div class="sub-title">
+          <img src="./images/main-illust(1).png" alt="">
+          <h4>Icecream can change the world!</h4>
+        </div>
+        <h2>Ben &Jerry’s</h2>
+        <p>벤과 제리의 이야기는 1978년 뉴욕에서 시작되었습니다.<br>진하고 꾸덕한 식감과 우유 풍미, 달콤함을 강조한 맛의<br>프리미엄 아이스크림을 선보이는 글로벌 브랜드
+          <span>‘벤앤제리스’</span>입니다.
+        </p>
+        <a class="view-flavors-btn" href="">VIEW FLAVORS</a>
+      </div>
     </div>
     <div class="main-img-box">
       <img src="./images/main-img.png" alt="">
     </div>
     <div class="illust-wrapper">
-      <img src="./images/main-illust(1).png" alt="">
+
       <img src="./images/main-illust(2).png" alt="">
       <img src="./images/main-drawing.png" alt="">
     </div>
@@ -115,21 +121,8 @@
         <img src="./images/package4.png" alt="">
       </div>
     </div>
-    <div class="star-icon">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
-      <img src="./images/star-white.png" alt="">
+    <div class="star-bg">
+      <img src="./images/star-bg.png" alt="">
     </div>
   </section>
 
@@ -149,152 +142,176 @@
         <div class="flavors-img-wrapper">
           <img src="./images/pistachio.heic" alt="">
         </div>
-        <h5>피스타치오 피스타치오</h5>
-        <p>피스타치오의 고소함을 그대로 느낄 수 있는 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>피스타치오 피스타치오</h5>
+          <p>피스타치오의 고소함을 그대로 느낄 수 있는 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/chocholate-fudge-brownie.jpg" alt="">
         </div>
-        <h5>초콜릿 퍼지 브라우니</h5>
-        <p>풍부한 맛의 다크초콜릿과 브라우니 퍼지의 조합</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
-          <img src="./images/minicup.png" alt="">
-          <p>미니컵</p>
+        <div class="flavors-info-wrapper">
+          <h5>초콜릿 퍼지 브라우니</h5>
+          <p>풍부한 맛의 다크초콜릿과 브라우니 퍼지의 조합</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+            <img src="./images/minicup.png" alt="">
+            <p>미니컵</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/cherry-garcia.jpg" alt="">
         </div>
-        <h5>체리 가르시아</h5>
-        <p>체리 퍼지 플레이크가 들어간 체리 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
-          <img src="./images/minicup.png" alt="">
-          <p>미니컵</p>
+        <div class="flavors-info-wrapper">
+          <h5>체리 가르시아</h5>
+          <p>체리 퍼지 플레이크가 들어간 체리 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+            <img src="./images/minicup.png" alt="">
+            <p>미니컵</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/chunky-monkey.jpg" alt="">
         </div>
-        <h5>청키 몽키</h5>
-        <p>호두 퍼지 덩어리가 가득한 바나나 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>청키 몽키</h5>
+          <p>호두 퍼지 덩어리가 가득한 바나나 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/karamel-sutra-core.jpg" alt="">
         </div>
-        <h5>카라멜 수트라 코어</h5>
-        <p>중심에 부드러운 카라멜이 들어있는 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>카라멜 수트라 코어</h5>
+          <p>중심에 부드러운 카라멜이 들어있는 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/chocolate-chip-cookie-dough.jpg" alt="">
         </div>
-        <h5>초콜릿 칩 쿠키도우</h5>
-        <p>쿠키 도우, 퍼지 덩어리가 들어간 바닐라 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
-          <img src="./images/minicup.png" alt="">
-          <p>미니컵</p>
+        <div class="flavors-info-wrapper">
+          <h5>초콜릿 칩 쿠키도우</h5>
+          <p>쿠키 도우, 퍼지 덩어리가 들어간 바닐라 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+            <img src="./images/minicup.png" alt="">
+            <p>미니컵</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/half-backed.jpg" alt="">
         </div>
-        <h5>하프 베이크드</h5>
-        <p>쿠키도우와 퍼지 브라우니의 절묘한 조화</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>하프 베이크드</h5>
+          <p>쿠키도우와 퍼지 브라우니의 절묘한 조화</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/vanilla.jpg" alt="">
         </div>
-        <h5>바닐라</h5>
-        <p>지금까지 맛본 바닐라보다 더 맛있는 바닐라의 맛</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>바닐라</h5>
+          <p>지금까지 맛본 바닐라보다 더 맛있는 바닐라의 맛</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/coffee-buzz.jpg" alt="">
         </div>
-        <h5>커피커피 버즈버즈버즈</h5>
-        <p>크리미한 커피 아이스크림에 에스프레소 퍼지 가득!</p>
-        <div class="size-icon">
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>커피커피 버즈버즈버즈</h5>
+          <p>크리미한 커피 아이스크림에 에스프레소 퍼지 가득!</p>
+          <div class="size-icon">
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/newyork-super-fudge-chunk.jpg" alt="">
         </div>
-        <h5>뉴욕 슈퍼 퍼지 청크</h5>
-        <p>초콜릿 퍼지 청크와 견과류가 들어간 아이스크림</p>
-        <div class="size-icon">
-          <img src="./images/scoop.png" alt="">
-          <p>스쿱</p>
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>뉴욕 슈퍼 퍼지 청크</h5>
+          <p>초콜릿 퍼지 청크와 견과류가 들어간 아이스크림</p>
+          <div class="size-icon">
+            <img src="./images/scoop.png" alt="">
+            <p>스쿱</p>
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/peanut-butter-cup.jpg" alt="">
         </div>
-        <h5>피넛버터 컵</h5>
-        <p>고소한 피넛버터 아이스크림과 피넛버터 초콜릿</p>
-        <div class="size-icon">
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>피넛버터 컵</h5>
+          <p>고소한 피넛버터 아이스크림과 피넛버터 초콜릿</p>
+          <div class="size-icon">
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
       <div class="flavors-slide-item">
         <div class="flavors-img-wrapper">
           <img src="./images/mint-chocolate-cookie.jpg" alt="">
         </div>
-        <h5>민트 초콜릿 쿠키</h5>
-        <p>신선한 민트 아이스크림과 초콜릿 쿠키 덩어리</p>
-        <div class="size-icon">
-          <img src="./images/pint.png" alt="">
-          <p>파인트</p>
+        <div class="flavors-info-wrapper">
+          <h5>민트 초콜릿 쿠키</h5>
+          <p>신선한 민트 아이스크림과 초콜릿 쿠키 덩어리</p>
+          <div class="size-icon">
+            <img src="./images/pint.png" alt="">
+            <p>파인트</p>
+          </div>
         </div>
       </div>
     </div>
@@ -311,6 +328,30 @@
   </section>
 
 
+  <!----------- text event ---------->
+  <div class="animated-box">
+    <div class="animated-box-track">
+      <div class="animated-content event-move-text">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+        <img src="./images/arrow-white.png" alt="">
+        <h3>ICECREAM CHANGE THE WORLD!</h3>
+      </div>
+    </div>
+  </div>
+
+
   <!----------- news ---------->
   <section class="news-wrapper">
     <div class="news-title-wrapper">
@@ -324,11 +365,11 @@
       <div class="news">
         <div class="news-txt">
           <h4>Free Cone day (프리 콘 데이): 미국 버몬트에서 세계적인 축제가 되기까지</h4>
-          <p>2023/03/01</p>
+          <p class="date">2023/03/01</p>
           <p>Free Cone day가 얼마 남지 않았어요! Free Cone day는 언제부터 시작됐을까요?</p>
           <div class="news-btn-wrapper">
-            <a href="">VIEW MORE</a>
-            <a href="">SHARE</a>
+            <a class="viewmore" href="">VIEW MORE</a>
+            <a class="share" href="">SHARE</a>
           </div>
         </div>
         <a href=""><img src="./images/news-arrow.png" alt=""></a>
@@ -336,11 +377,11 @@
       <div class="news">
         <div class="news-txt">
           <h4>Free Cone day (프리 콘 데이)에는 어떤 맛을 꼭 먹어봐야 할까요?</h4>
-          <p>2023/03/01</p>
+          <p class="date">2023/03/01</p>
           <p>Free Cone day를 기다리고 있는 여러분들을 위해 취향 테스트를 준비해 봤어요! 지금 바로 퀴즈를 풀어 보세요.</p>
           <div class="news-btn-wrapper">
-            <a href="">VIEW MORE</a>
-            <a href="">SHARE</a>
+            <a class="viewmore" href="">VIEW MORE</a>
+            <a class="share" href="">SHARE</a>
           </div>
         </div>
         <a href=""><img src="./images/news-arrow.png" alt=""></a>
@@ -348,16 +389,18 @@
       <div class="news">
         <div class="news-txt">
           <h4>Ben&Jerry's 테스트: 나에게 꼭 맞는 맛은?</h4>
-          <p>2022/11/21</p>
+          <p class="date">2022/11/21</p>
           <p>Ben & Jerry's에는 생소한 맛이 너무 많아 무슨 아이스크림을 선택해야 할지 고민이시라고요? 저희가 도와드리겠습니다!</p>
           <div class="news-btn-wrapper">
-            <a href="">VIEW MORE</a>
-            <a href="">SHARE</a>
+            <a class="viewmore" href="">VIEW MORE</a>
+            <a class="share" href="">SHARE</a>
           </div>
         </div>
         <a href=""><img src="./images/news-arrow.png" alt=""></a>
       </div>
-      <a href="">read more</a>
+      <div class="view-more-btn-wrapper">
+        <a class="readmore" href="">read more</a>
+      </div>
     </div>
   </section>
 
@@ -460,31 +503,31 @@
         <img src="./images/sticker10.png" alt="">
       </div>
     </div>
-    <div class="issue1">
+    <div class="issue">
       <img src="./images/issues1.png" alt="">
       <h5>Fair Trade</h5>
-      <p>공정 무역</p>
+      <p class="sub-title">공정 무역</p>
       <p>Ben & Jerry's는 공정성을 중요하게 생각합니다. 공정 무역 원료
         조달이 발휘하는 영향력을 바탕으로 생산자 개발 이니셔티브
         프로그램을 통해 소규모 생산자를 지원,강화하고자 합니다.</p>
     </div>
-    <div class="issue2">
+    <div class="issue">
       <img src="./images/issues2.png" alt="">
       <h5>Our Climate Impact</h5>
-      <p>기후 변화와 환경에 미치는 영향</p>
+      <p class="sub-title">기후 변화와 환경에 미치는 영향</p>
       <p>기후 변화로 인해 지구도 변화하고 있습니다. Ben & Jerry's는
         재생 사료 및 작물 재배, 지속 가능한 패키지, 저탄소 원료 사용 등으로 탄소 배출량을 줄이기 위해 노력하고 있습니다.</p>
     </div>
-    <div class="issue3">
+    <div class="issue">
       <img src="./images/issues3.png" alt="">
       <h5>LGBTQ+ Rights</h5>
-      <p>성적 소수자의 권리</p>
+      <p class="sub-title">성적 소수자의 권리</p>
       <p>Ben & Jerry’s는 모든 사람이 평등하며 존중받을 자격이 있다는 믿음을 기반으로 운영되어 왔습니다. 평등법 등 차별을 없애기 위한 법안을 지지하며, 인권 캠페인을 지원합니다.</p>
     </div>
-    <div class="issue4">
+    <div class="issue">
       <img src="./images/issues4.png" alt="">
       <h5>Climate Justice</h5>
-      <p>기후 정의</p>
+      <p class="sub-title">기후 정의</p>
       <p>아이스크림 생산 과정에서 온실가스가 배출된다는 점을 알고 있습니다. Ben & Jerry's는 이에 책임감을 느끼며 Avaaz , The Climate Reality Project, 350.org
         등의 단체 및 환경 운동과 함께합니다.</p>
     </div>
