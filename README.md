@@ -1,4 +1,5 @@
 # 벤엔제리스 아이스크림<br>웹 디자인&퍼블리싱 작업 일지 (240618 - )
+https://seohee423.github.io/BENNJERRYS/index.html
 
 ----
 
