@@ -268,7 +268,7 @@
 /***** flavors *****/
 .flavors-wrapper {
   width: 100%;
-  padding: 0px 0px 40px 20px;
+  padding: 0px 0px 40px 0px;
   background-color: var(--color-element-7);
   position: relative;
   /* overflow-x: hidden; */
@@ -276,7 +276,7 @@
 
 .flavors-wrapper .flavors-title-wrapper {
   position: relative;
-  margin-bottom: 50px;
+  margin: 0px 0px 50px 20px;
 }
 
 .flavors-wrapper .flavors-title-wrapper h3 {
@@ -324,6 +324,7 @@
 
 .slider-rotate {
   width: 100%;
+  padding-left: 20px;
   margin: 0 auto;
   /* height: 50vh; */
   display: flex;
@@ -415,7 +416,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  /* padding-right: 20px; */
+  padding-left: 20px;
   margin-top: 30px;
 }
 
@@ -633,12 +634,13 @@
   width: 100%;
   background-color: var(--color-black);
   color: var(--color-white);
-  padding: 60px 20px;
+  padding: 60px 0px;
 }
 
 .business-wrapper .business-info {
   display: flex;
-  width: calc(100vw - 40px);
+  width: 100%;
+  padding: 0px 20px;
 }
 
 .business-wrapper .business-info .business-title-wrapper {
@@ -668,8 +670,15 @@
 .business-img-slide {
   width: 100%;
   height: 50vh;
+  padding: 0px 5px 0px 20px;
   white-space: nowrap;
   overflow: hidden;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.business-img-slide:active {
+  cursor: grabbing;
 }
 
 .business-img-wrapper {
