@@ -333,6 +333,8 @@
   overflow: hidden;
   position: relative;
   visibility: hidden;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .flavors-slide-wrapper:active {

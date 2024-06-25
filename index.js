@@ -389,7 +389,7 @@ function handleTouchMove(e) {
     if (!isDragging) return;
     var touch = e.touches[0];
     var x = touch.pageX - this.offsetLeft;
-    var walk = (x - startX) * 3; // 스크롤 속도를 조정할 수 있습니다
+    var walk = (x - startX) * 1; // 스크롤 속도를 조정할 수 있습니다
     this.scrollLeft = scrollLeft - walk;
 }
 
@@ -414,8 +414,8 @@ $(document).ready(function () {
     slider.addEventListener('mouseup', handleMouseUp);
     slider.addEventListener('mouseleave', handleMouseUp);
 
-    slider.addEventListener('touchmove', handleTouchMove);
-    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+    slider.addEventListener('touchstart', handleTouchStart, { passive: false });
     slider.addEventListener('touchend', handleTouchEnd);
 });
 
