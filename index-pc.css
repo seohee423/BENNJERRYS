@@ -194,8 +194,8 @@
 
   /***** flavors *****/
   .flavors-wrapper {
-    width: 400%;
-    height: 90vh;
+    width: 100%;
+    height: 75vh;
     padding: 0px 20px 60px;
     background-color: var(--color-element-7);
     position: relative;
@@ -237,38 +237,125 @@
     z-index: 2;
   }
 
-  .flavors-wrapper .slide-btn-wrapper {
-    display: block;
+  .flavors-wrapper .flavors-slide-wrapper {
+    width: 90%;
   }
 
-  .flavors-wrapper .slide-btn-wrapper img {
-    width: 30px;
-    padding: 6px;
+  .slider-rotate__container .slider-rotate__arrow {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    cursor: pointer;
+    text-align: center;
     background-color: var(--color-element-2);
     border: 1px solid var(--color-black);
-    z-index: 2;
-    cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
-  .flavors-wrapper .slide-btn-wrapper img:first-child {
-    transform: rotate(180deg);
+  .slider-rotate__container .slider-rotate__arrow.slider-rotate__arrow--left {
+    left: 0;
   }
 
-  .flavors-wrapper .slide-btn-wrapper img:first-child:hover {
-    background-color: var(--color-element-1);
+  .slider-rotate__container .slider-rotate__arrow.slider-rotate__arrow--right {
+    right: 0;
   }
 
-  .flavors-wrapper .slide-btn-wrapper img:last-child:hover {
+  .slider-rotate__container .slider-rotate__arrow img {
+    display: block;
+    width: 25px;
+    margin: 6px;
+  }
+
+  .slider-rotate__container .slider-rotate__arrow:nth-child(1):hover {
     background-color: var(--color-element-3);
   }
 
-  .flavors-wrapper .flavors-slide-wrapper {
-    display: flex;
-    gap: 80px;
+  .slider-rotate__container .slider-rotate__arrow:nth-child(2):hover {
+    background-color: var(--color-element-1);
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item {
+  .slider-rotate__container {
+    position: relative;
+    width: 90%;
+    height: 50vh;
+    visibility: hidden;
+    margin: 0 auto;
+    /* background-color: #ddd; */
+  }
+
+  .slider-rotate {
+    margin: 0 auto;
+  }
+
+  #slider-2 {
+    margin: 50px 0;
+  }
+
+  .slider-rotate__item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    -webkit-transform: translateY(-50%) translateX(-50%) scale(0.8);
+    -moz-transform: translateY(-50%) translateX(-50%) scale(0.8);
+    -ms-transform: translateY(-50%) translateX(-50%) scale(0.8);
+    -o-transform: translateY(-50%) translateX(-50%) scale(0.8);
+    transform: translateY(-50%) translateX(-50%) scale(0.8);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .slider-rotate__item.slider-rotate__item--next {
+    left: 70%;
+  }
+
+  .slider-rotate__item.slider-rotate__item--prev {
+    left: 30%;
+  }
+
+  .slider-rotate__item.slider-rotate__item--prev,
+  .slider-rotate__item.slider-rotate__item--next {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .slider-rotate__item.slider-rotate__item--next-2 {
+    left: 85%;
+  }
+
+  .slider-rotate__item.slider-rotate__item--prev-2 {
+    left: 15%;
+  }
+
+  .slider-rotate__item.slider-rotate__item--next-2,
+  .slider-rotate__item.slider-rotate__item--prev-2 {
+    -webkit-transform: translateY(-50%) translateX(-50%) scale(0.5);
+    -moz-transform: translateY(-50%) translateX(-50%) scale(0.5);
+    -ms-transform: translateY(-50%) translateX(-50%) scale(0.5);
+    -o-transform: translateY(-50%) translateX(-50%) scale(0.5);
+    transform: translateY(-50%) translateX(-50%) scale(0.5);
+    opacity: 1;
+  }
+
+
+  .slider-rotate__item.slider-rotate__item--active {
+    opacity: 1;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%) scale(1);
+    -moz-transform: translateY(-50%) translateX(-50%) scale(1);
+    -ms-transform: translateY(-50%) translateX(-50%) scale(1);
+    -o-transform: translateY(-50%) translateX(-50%) scale(1);
+    transform: translateY(-50%) translateX(-50%) scale(1);
+  }
+
+  .flavors-slide-item {
     width: 350px;
     height: 450px;
     padding: 20px;
@@ -280,19 +367,19 @@
     cursor: pointer;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-img-wrapper {
+  .flavors-slide-item .flavors-img-wrapper {
     width: 100%;
     height: 73%;
     margin-bottom: 15px;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-img-wrapper img {
+  .flavors-slide-item .flavors-img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper {
+  .flavors-slide-item .flavors-info-wrapper {
     width: 100%;
     height: 40%;
     display: flex;
@@ -300,31 +387,31 @@
     justify-content: space-between;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper h5 {
+  .flavors-slide-item .flavors-info-wrapper h5 {
     font-family: 'Noto Sans KR';
     font-size: 20px;
     font-weight: 700;
 
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper p {
+  .flavors-slide-item .flavors-info-wrapper p {
     font-family: 'Noto Sans KR';
     font-size: 11px;
     font-weight: 400;
     margin-bottom: 7px;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper .size-icon {
+  .flavors-slide-item .flavors-info-wrapper .size-icon {
     display: flex;
     align-items: center;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper .size-icon img {
+  .flavors-slide-item .flavors-info-wrapper .size-icon img {
     height: 28px;
     margin-right: 7px;
   }
 
-  .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-info-wrapper .size-icon p {
+  .flavors-slide-item .flavors-info-wrapper .size-icon p {
     margin-right: 10px;
   }
 
@@ -355,9 +442,9 @@
   }
 
   .flavors-wrapper .sticker-wrapper img:nth-child(1) {
-    bottom: 70vh;
+    bottom: 12vh;
     left: 10%;
-    width: 16px;
+    width: 18px;
   }
 
   .flavors-wrapper .sticker-wrapper img:nth-child(2) {
@@ -367,14 +454,14 @@
   }
 
   .flavors-wrapper .sticker-wrapper img:nth-child(3) {
-    top: 77vh;
+    top: 65vh;
     left: 65vw;
     width: 50px;
   }
 
   .flavors-wrapper .sticker-wrapper img:nth-child(4) {
-    top: 68vh;
-    left: 95vw;
+    top: 55vh;
+    left: 90vw;
     width: 30px;
   }
 
