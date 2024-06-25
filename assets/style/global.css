@@ -78,7 +78,7 @@ header .header-nav .global-menu {
   display: none;
   padding: 40px;
   background-color: var(--color-element-1);
-  transition: 0.5s ease;
+  transition: 0.5s;
 }
 
 .menu li {
