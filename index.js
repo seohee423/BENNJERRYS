@@ -12,57 +12,66 @@ document.addEventListener("DOMContentLoaded", function() {
 /* business 드래그 슬라이드(모바일) */
 
 var isDragging = false;
-var startX;
-var scrollLeft;
-var mx = 0;
+        var startX;
+        var scrollLeft;
+        var mx = 0;
 
-$(".business-img-slide").on({
-    mousemove: function (e) {
-        if (!isDragging) return;
-        var mx2 = e.pageX - this.offsetLeft;
-        this.scrollLeft = this.sx + mx - mx2;
-    },
-    mousedown: function (e) {
-        isDragging = true;
-        this.sx = this.scrollLeft;
-        mx = e.pageX - this.offsetLeft;
-        $(this).css("cursor", "grabbing");
-    },
-    mouseup: function () {
-        isDragging = false;
-        $(this).css("cursor", "grab");
-    },
-    mouseleave: function () {
-        isDragging = false;
-        $(this).css("cursor", "grab");
-    }
-});
+        function handleMouseMove(e) {
+            if (!isDragging) return;
+            var mx2 = e.pageX - this.offsetLeft;
+            this.scrollLeft = this.sx + mx - mx2;
+        }
 
-$(".business-img-slide").on({
-    touchstart: function (e) {
-        isDragging = true;
-        var touch = e.touches[0];
-        this.sx = this.scrollLeft;
-        mx = touch.pageX - this.offsetLeft;
-        $(this).css("cursor", "grabbing");
-    },
-    touchmove: function (e) {
-        if (!isDragging) return;
-        var touch = e.touches[0];
-        var mx2 = touch.pageX - this.offsetLeft;
-        this.scrollLeft = this.sx + mx - mx2;
-        e.preventDefault(); // 기본 터치 스크롤 방지
-    },
-    touchend: function () {
-        isDragging = false;
-        $(this).css("cursor", "grab");
-    }
-});
+        function handleMouseDown(e) {
+            isDragging = true;
+            this.sx = this.scrollLeft;
+            mx = e.pageX - this.offsetLeft;
+            $(this).css("cursor", "grabbing");
+        }
 
-$(document).on("mouseup touchend", function () {
-    isDragging = false;
-    $(".business-img-slide").css("cursor", "grab");
-});
+        function handleMouseUp() {
+            isDragging = false;
+            $(".business-img-slide").css("cursor", "grab");
+        }
+
+        function handleTouchMove(e) {
+            if (!isDragging) return;
+            var touch = e.touches[0];
+            var mx2 = touch.pageX - this.offsetLeft;
+            this.scrollLeft = this.sx + mx - mx2;
+            e.preventDefault(); // 기본 터치 스크롤 방지
+        }
+
+        function handleTouchStart(e) {
+            isDragging = true;
+            var touch = e.touches[0];
+            this.sx = this.scrollLeft;
+            mx = touch.pageX - this.offsetLeft;
+            $(this).css("cursor", "grabbing");
+        }
+
+        function handleTouchEnd() {
+            isDragging = false;
+            $(".business-img-slide").css("cursor", "grab");
+        }
+
+        $(document).ready(function () {
+            var slider = document.querySelector('.business-img-slide');
+
+            slider.addEventListener('mousemove', handleMouseMove);
+            slider.addEventListener('mousedown', handleMouseDown);
+            slider.addEventListener('mouseup', handleMouseUp);
+            slider.addEventListener('mouseleave', handleMouseUp);
+
+            slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+            slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+            slider.addEventListener('touchend', handleTouchEnd);
+        });
+
+        $(document).on("mouseup touchend", function () {
+            isDragging = false;
+            $(".business-img-slide").css("cursor", "grab");
+        });
 
 /* business 버튼 슬라이드(PC) */
 $(document).ready(function() {

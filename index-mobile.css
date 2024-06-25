@@ -320,11 +320,11 @@
 
 .flavors-wrapper .flavors-slide-wrapper {
   cursor: grab;
+  /* padding-left: 20px; */
 }
 
 .slider-rotate {
   width: 100%;
-  padding-left: 20px;
   margin: 0 auto;
   /* height: 50vh; */
   display: flex;
@@ -362,6 +362,10 @@
   display: inline-block;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.flavors-wrapper .flavors-slide-wrapper .flavors-slide-item:first-child {
+  margin-left: 20px;
 }
 
 .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item .flavors-img-wrapper {
@@ -675,6 +679,7 @@
   overflow: hidden;
   cursor: grab;
   -webkit-overflow-scrolling: touch;
+  touch-action: none;
 }
 
 .business-img-slide:active {
