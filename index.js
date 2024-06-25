@@ -361,41 +361,64 @@ $(function () {
 //     mx = 0;
 // });
 
-var mx = 0;
-var startX, scrollLeft;
+var isDragging = false;
+var startX;
+var scrollLeft;
 
 function handleMouseMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
     var x = e.pageX - this.offsetLeft;
-    if (mx) {
-        this.scrollLeft = this.sx + mx - x;
-    }
+    var walk = (x - startX) * 3; // 스크롤 속도를 조정할 수 있습니다
+    this.scrollLeft = scrollLeft - walk;
 }
 
 function handleMouseDown(e) {
-    this.sx = this.scrollLeft;
-    mx = e.pageX - this.offsetLeft;
+    isDragging = true;
+    startX = e.pageX - this.offsetLeft;
+    scrollLeft = this.scrollLeft;
+    this.style.cursor = "grabbing";
+}
+
+function handleMouseUp() {
+    isDragging = false;
+    document.querySelector('.slider-rotate').style.cursor = "grab";
 }
 
 function handleTouchMove(e) {
-    if (mx) {
-        var touch = e.touches[0];
-        var x = touch.pageX - this.offsetLeft;
-        this.scrollLeft = this.sx + mx - x;
-    }
+    if (!isDragging) return;
+    var touch = e.touches[0];
+    var x = touch.pageX - this.offsetLeft;
+    var walk = (x - startX) * 3; // 스크롤 속도를 조정할 수 있습니다
+    this.scrollLeft = scrollLeft - walk;
 }
 
 function handleTouchStart(e) {
+    isDragging = true;
     var touch = e.touches[0];
-    this.sx = this.scrollLeft;
-    mx = touch.pageX - this.offsetLeft;
+    startX = touch.pageX - this.offsetLeft;
+    scrollLeft = this.scrollLeft;
+    this.style.cursor = "grabbing";
 }
 
-$(".slider-rotate").on("mousemove", handleMouseMove);
-$(".slider-rotate").on("mousedown", handleMouseDown);
+function handleTouchEnd() {
+    isDragging = false;
+    document.querySelector('.slider-rotate').style.cursor = "grab";
+}
 
-$(".slider-rotate").on("touchmove", handleTouchMove);
-$(".slider-rotate").on("touchstart", handleTouchStart);
+$(document).ready(function () {
+    var slider = document.querySelector('.slider-rotate');
+
+    slider.addEventListener('mousemove', handleMouseMove);
+    slider.addEventListener('mousedown', handleMouseDown);
+    slider.addEventListener('mouseup', handleMouseUp);
+    slider.addEventListener('mouseleave', handleMouseUp);
+
+    slider.addEventListener('touchmove', handleTouchMove);
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchend', handleTouchEnd);
+});
 
 $(document).on("mouseup touchend", function () {
-    mx = 0;
+    isDragging = false;
 });
