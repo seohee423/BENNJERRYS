@@ -319,9 +319,8 @@
 
 
 .flavors-wrapper .flavors-slide-wrapper {
-
+  cursor: grab;
 }
-
 
 .slider-rotate {
   width: 100%;
@@ -334,6 +333,10 @@
   overflow: hidden;
   position: relative;
   visibility: hidden;
+}
+
+.flavors-slide-wrapper:active {
+  cursor: grabbing;
 }
 
 .slider-rotate__container {

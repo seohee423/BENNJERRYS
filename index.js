@@ -344,19 +344,58 @@ $(function () {
 
 
 /* flavor 드래그 슬라이드(모바일) */
+// var mx = 0;
+
+// $(".slider-rotate").on({
+//     mousemove: function (e) {
+//         var mx2 = e.pageX - this.offsetLeft;
+//         if (mx) this.scrollLeft = this.sx + mx - mx2;
+//     },
+//     mousedown: function (e) {
+//         this.sx = this.scrollLeft;
+//         mx = e.pageX - this.offsetLeft;
+//     }
+// });
+
+// $(document).on("mouseup", function () {
+//     mx = 0;
+// });
+
 var mx = 0;
+var startX, scrollLeft;
 
-$(".slider-rotate").on({
-    mousemove: function (e) {
-        var mx2 = e.pageX - this.offsetLeft;
-        if (mx) this.scrollLeft = this.sx + mx - mx2;
-    },
-    mousedown: function (e) {
-        this.sx = this.scrollLeft;
-        mx = e.pageX - this.offsetLeft;
+function handleMouseMove(e) {
+    var x = e.pageX - this.offsetLeft;
+    if (mx) {
+        this.scrollLeft = this.sx + mx - x;
     }
-});
+}
 
-$(document).on("mouseup", function () {
+function handleMouseDown(e) {
+    this.sx = this.scrollLeft;
+    mx = e.pageX - this.offsetLeft;
+}
+
+function handleTouchMove(e) {
+    if (mx) {
+        var touch = e.touches[0];
+        var x = touch.pageX - this.offsetLeft;
+        this.scrollLeft = this.sx + mx - x;
+    }
+}
+
+function handleTouchStart(e) {
+    var touch = e.touches[0];
+    this.sx = this.scrollLeft;
+    mx = touch.pageX - this.offsetLeft;
+}
+
+$(".flavors-slide-wrapper").on("mousemove", handleMouseMove);
+$(".flavors-slide-wrapper").on("mousedown", handleMouseDown);
+
+$(".flavors-slide-wrapper").on("touchmove", handleTouchMove);
+$(".flavors-slide-wrapper").on("touchstart", handleTouchStart);
+
+$(document).on("mouseup touchend", function () {
     mx = 0;
 });
