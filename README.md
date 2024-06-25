@@ -4,8 +4,12 @@ https://seohee423.github.io/BENNJERRYS/index.html
 ----
 
 ## 240625
-#### css&js
+- 깃허브 페이지 생성<br>
+- favicon, open graphy 설정<br>
+- 중복 코드 정리, a링크 연결 작업
+#### css
 - 각 영역을 벗어나는 요소 overflow-x:hidden;으로 처리<br>
+#### js
 - flavor 페이지 슬라이드 이벤트는 모바일과 PC의 작동 방식이 각각 달라 어떻게 구현할지 고민함<br>
   → 모바일에서는 business에서 사용한 드래그 슬라이드 방식을 동일하게 적용<br>
   → PC에서는 이전 슬라이드에 scale이 적용되어 사이즈가 줄어들고 슬라이드 위치에 따라 opacity가 적용되는 플러그인 사용<br>

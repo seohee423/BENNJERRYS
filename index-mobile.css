@@ -45,8 +45,6 @@
   font-weight: 600;
 }
 
-.main-wrapper .main-title-box .main-title {}
-
 .main-wrapper .main-title-box .main-title .view-flavors-btn {
   padding: 12px 18px;
   text-align: center;
@@ -271,7 +269,6 @@
   padding: 0px 0px 40px 0px;
   background-color: var(--color-element-7);
   position: relative;
-  /* overflow-x: hidden; */
 }
 
 .flavors-wrapper .flavors-title-wrapper {
@@ -320,17 +317,14 @@
 
 .flavors-wrapper .flavors-slide-wrapper {
   cursor: grab;
-  /* padding-left: 20px; */
 }
 
 .slider-rotate {
   width: 100%;
   margin: 0 auto;
-  /* height: 50vh; */
   display: flex;
   white-space: nowrap;
   overflow-x: hidden;
-  /* gap: 15px; */
   overflow: hidden;
   position: relative;
   visibility: hidden;
@@ -352,13 +346,11 @@
 
 .flavors-wrapper .flavors-slide-wrapper .flavors-slide-item {
   width: 330px;
-  /* width: 85vw; */
   height: 450px;
   padding: 20px;
   margin-right: 15px;
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
-  /* display: flex; */
   display: inline-block;
   flex-direction: column;
   justify-content: space-between;
@@ -436,8 +428,6 @@
   font-weight: 400;
   width: 70%;
 }
-
-.flavors-wrapper .sticker-wrapper {}
 
 .flavors-wrapper .sticker-wrapper img {
   position: absolute;
@@ -552,8 +542,6 @@
   margin: 0 auto;
 }
 
-.news-wrapper .news-contents-wrapper {}
-
 .news-wrapper .news-contents-wrapper .news {
   display: flex;
   justify-content: space-between;
@@ -634,7 +622,6 @@
 
 /***** business *****/
 .business-wrapper {
-  /* width: 700%; */
   width: 100%;
   background-color: var(--color-black);
   color: var(--color-white);
@@ -665,11 +652,6 @@
 .business-wrapper .business-info .slide-btn {
   display: none;
 }
-
-.business-wrapper .business-info .slide-btn a {}
-
-.business-wrapper .business-info .slide-btn a img {}
-
 
 .business-img-slide {
   width: 100%;

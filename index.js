@@ -1,86 +1,85 @@
 /* header 햄버거 메뉴 */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.getElementById('hamburger-menu');
   const menu = document.getElementById('menu');
 
-  hamburgerMenu.addEventListener('click', function() {
+  hamburgerMenu.addEventListener('click', function () {
     menu.classList.toggle('active');
     hamburgerMenu.classList.toggle('active');
   });
 });
 
 /* business 드래그 슬라이드(모바일) */
-
 var isDragging = false;
-        var startX;
-        var scrollLeft;
-        var mx = 0;
+var startX;
+var scrollLeft;
+var mx = 0;
 
-        function handleMouseMove(e) {
-            if (!isDragging) return;
-            var mx2 = e.pageX - this.offsetLeft;
-            this.scrollLeft = this.sx + mx - mx2;
-        }
+function handleMouseMove(e) {
+  if (!isDragging) return;
+  var mx2 = e.pageX - this.offsetLeft;
+  this.scrollLeft = this.sx + mx - mx2;
+}
 
-        function handleMouseDown(e) {
-            isDragging = true;
-            this.sx = this.scrollLeft;
-            mx = e.pageX - this.offsetLeft;
-            $(this).css("cursor", "grabbing");
-        }
+function handleMouseDown(e) {
+  isDragging = true;
+  this.sx = this.scrollLeft;
+  mx = e.pageX - this.offsetLeft;
+  $(this).css("cursor", "grabbing");
+}
 
-        function handleMouseUp() {
-            isDragging = false;
-            $(".business-img-slide").css("cursor", "grab");
-        }
+function handleMouseUp() {
+  isDragging = false;
+  $(".business-img-slide").css("cursor", "grab");
+}
 
-        function handleTouchMove(e) {
-            if (!isDragging) return;
-            var touch = e.touches[0];
-            var mx2 = touch.pageX - this.offsetLeft;
-            this.scrollLeft = this.sx + mx - mx2;
-            e.preventDefault(); // 기본 터치 스크롤 방지
-        }
+function handleTouchMove(e) {
+  if (!isDragging) return;
+  var touch = e.touches[0];
+  var mx2 = touch.pageX - this.offsetLeft;
+  this.scrollLeft = this.sx + mx - mx2;
+  e.preventDefault();
+}
 
-        function handleTouchStart(e) {
-            isDragging = true;
-            var touch = e.touches[0];
-            this.sx = this.scrollLeft;
-            mx = touch.pageX - this.offsetLeft;
-            $(this).css("cursor", "grabbing");
-        }
+function handleTouchStart(e) {
+  isDragging = true;
+  var touch = e.touches[0];
+  this.sx = this.scrollLeft;
+  mx = touch.pageX - this.offsetLeft;
+  $(this).css("cursor", "grabbing");
+}
 
-        function handleTouchEnd() {
-            isDragging = false;
-            $(".business-img-slide").css("cursor", "grab");
-        }
+function handleTouchEnd() {
+  isDragging = false;
+  $(".business-img-slide").css("cursor", "grab");
+}
 
-        $(document).ready(function () {
-            var slider = document.querySelector('.business-img-slide');
+$(document).ready(function () {
+  var slider = document.querySelector('.business-img-slide');
 
-            slider.addEventListener('mousemove', handleMouseMove);
-            slider.addEventListener('mousedown', handleMouseDown);
-            slider.addEventListener('mouseup', handleMouseUp);
-            slider.addEventListener('mouseleave', handleMouseUp);
+  slider.addEventListener('mousemove', handleMouseMove);
+  slider.addEventListener('mousedown', handleMouseDown);
+  slider.addEventListener('mouseup', handleMouseUp);
+  slider.addEventListener('mouseleave', handleMouseUp);
 
-            slider.addEventListener('touchmove', handleTouchMove, { passive: false });
-            slider.addEventListener('touchstart', handleTouchStart, { passive: false });
-            slider.addEventListener('touchend', handleTouchEnd);
-        });
+  slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+  slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+  slider.addEventListener('touchend', handleTouchEnd);
+});
 
-        $(document).on("mouseup touchend", function () {
-            isDragging = false;
-            $(".business-img-slide").css("cursor", "grab");
-        });
+$(document).on("mouseup touchend", function () {
+  isDragging = false;
+  $(".business-img-slide").css("cursor", "grab");
+});
 
 /* business 버튼 슬라이드(PC) */
-$(document).ready(function() {
+$(document).ready(function () {
   var currentTranslateX = 0;
   var slideWidth = 380;
   var maxSlides = $('.business-img-wrapper').length;
   var maxTranslateX = -(slideWidth * (maxSlides - 1));
 
-  $('.arrow-left').on('click', function(e) {
+  $('.arrow-left').on('click', function (e) {
     e.preventDefault();
     if (currentTranslateX < 0) {
       currentTranslateX += slideWidth;
@@ -88,7 +87,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.arrow-right').on('click', function(e) {
+  $('.arrow-right').on('click', function (e) {
     e.preventDefault();
     if (currentTranslateX > maxTranslateX) {
       currentTranslateX -= slideWidth;
@@ -105,10 +104,6 @@ $(function () {
 
 });
 
-//-------------------------------------------
-//based on : https://www.jqueryscript.net/demo/Basic-3D-Image-Rotator-with-jQuery-CSS3-rotateSlider/
-// plugin template by https://jqueryboilerplate.com/
-;
 (function ($, window, document, undefined) {
 
   "use strict";
@@ -173,13 +168,10 @@ $(function () {
 
   function _init(__options__, __this__) {
 
-    //---------------------------------
-    //---------------------------------
     var opts = __this__.options;
     $.extend(opts, __options__);
     opts.activate.call(__this__);
-    //---------------------------------
-    //---------------------------------
+
     __this__.displayItens = (opts.displayItems == 3 || opts.displayItems == 5) ? opts.displayItems : __this__.DISPLAY_3;
     __this__.itemClass = opts.itemClass || 'slider-rotate__item';
     __this__.arrowClass = opts.arrowClass || 'js-slider-rotate-arrow';
@@ -191,43 +183,33 @@ $(function () {
     __this__.autoSlide = opts.autoSlide;
     __this__.time = opts.time;
 
-    //add class to change layout by 3 or 5 itens
     __this__.plugin_element.addClass((__this__.displayItens == __this__.DISPLAY_3) ? __this__.CLASS_DISPLAY_3 : __this__.CLASS_DISPLAY_5);
 
-    //start items positions
     _moveSlide(__this__.indexActive, __this__);
 
-    //show container to prevent layout issues
     setTimeout(function () {
       __this__.$sliderContainer.css("visibility", "visible");
     }, 400);
 
-    //item mouse event
     __this__.$item.on('click.rotate', function () {
 
-      //prevent click on active item
       if ($(this).hasClass(__this__.ACTIVE_CLASS)) return false;
 
-      //move slide to the desired index
       _moveSlide($(this).index(), __this__);
 
       return false;
     });
 
-    //arrow mouse event
     __this__.$arrow.on('click.rotate', function () {
 
-      //action (prev or next)
       var _action = $(this).data('action');
 
       if (_action == 'next') {
 
-        //move slide
         _moveNext(__this__);
 
       } else if (_action == 'prev') {
 
-        //move slide
         _movePrev(__this__);
 
       }
@@ -239,34 +221,28 @@ $(function () {
     }
   }
 
-  //auto slide
   function _autoSlide(__this__) {
-    _pauseSlide(__this__); //	remove timer
+    _pauseSlide(__this__);
 
-    var _miliseconds = Number(__this__.time) * 1000; //	converts to miliseconds
+    var _miliseconds = Number(__this__.time) * 1000;
     __this__.slider_timer = setTimeout(function () {
       _moveNext(__this__);
     }, _miliseconds);
 
-    //stop items from auto slide
     __this__.$sliderContainer.unbind('mouseenter.slider').on('mouseenter.slider', function () {
-      _pauseSlide(__this__); //remove timer
+      _pauseSlide(__this__);
     });
 
-    //back to auto slide
     __this__.$sliderContainer.unbind('mouseleave.slider').on('mouseleave.slider', function () {
       _autoSlide(__this__);
     });
 
   }
 
-  //--------------
-  //pause slide
   function _pauseSlide(__this__) {
     clearTimeout(__this__.slider_timer);
   }
 
-  //move slide to the next item
   function _moveNext(__this__) {
 
     var _index = (__this__.indexActive == __this__.numItens - 1) ? 0 : (__this__.indexActive + 1);
@@ -275,7 +251,6 @@ $(function () {
 
   }
 
-  //move slide to the previous item
   function _movePrev(__this__) {
 
     var _index = (__this__.indexActive == 0) ? (__this__.numItens - 1) : (__this__.indexActive - 1);
@@ -288,14 +263,12 @@ $(function () {
 
     __this__.indexActive = __index__;
 
-    // removing all classes
     __this__.plugin_element.find('.' + __this__.ACTIVE_CLASS).removeClass(__this__.ACTIVE_CLASS);
     __this__.plugin_element.find('.' + __this__.NEXT_CLASS).removeClass(__this__.NEXT_CLASS);
     __this__.plugin_element.find('.' + __this__.PREV_CLASS).removeClass(__this__.PREV_CLASS);
     __this__.plugin_element.find('.' + __this__.PREV2_CLASS).removeClass(__this__.PREV2_CLASS);
     __this__.plugin_element.find('.' + __this__.NEXT2_CLASS).removeClass(__this__.NEXT2_CLASS);
 
-    //if active index is the last item
     if (__index__ == __this__.numItens - 1) {
 
       __this__.$item.eq(0).addClass(__this__.NEXT_CLASS);
@@ -306,7 +279,6 @@ $(function () {
 
     }
 
-    //if active index is the first item
     if (__index__ == 0) {
 
       __this__.$item.eq(__this__.numItens - 1).addClass(__this__.PREV_CLASS);
@@ -317,7 +289,6 @@ $(function () {
 
     }
 
-    // loop through all items
     __this__.$item.each(function (index) {
 
       if (index == __index__) {
@@ -338,7 +309,6 @@ $(function () {
 
       }
 
-      //just addClass if display 5 items
       if (__this__.displayItens == __this__.DISPLAY_5) {
 
         if (index == __index__ + 2) {
@@ -390,81 +360,64 @@ $(function () {
 
 
 /* flavor 드래그 슬라이드(모바일) */
-// var mx = 0;
-
-// $(".slider-rotate").on({
-//     mousemove: function (e) {
-//         var mx2 = e.pageX - this.offsetLeft;
-//         if (mx) this.scrollLeft = this.sx + mx - mx2;
-//     },
-//     mousedown: function (e) {
-//         this.sx = this.scrollLeft;
-//         mx = e.pageX - this.offsetLeft;
-//     }
-// });
-
-// $(document).on("mouseup", function () {
-//     mx = 0;
-// });
-
 var isDragging = false;
 var startX;
 var scrollLeft;
 
 function handleMouseMove(e) {
-    if (!isDragging) return;
-    e.preventDefault();
-    var x = e.pageX - this.offsetLeft;
-    var walk = (x - startX) * 3; // 스크롤 속도를 조정할 수 있습니다
-    this.scrollLeft = scrollLeft - walk;
+  if (!isDragging) return;
+  e.preventDefault();
+  var x = e.pageX - this.offsetLeft;
+  var walk = (x - startX) * 1;
+  this.scrollLeft = scrollLeft - walk;
 }
 
 function handleMouseDown(e) {
-    isDragging = true;
-    startX = e.pageX - this.offsetLeft;
-    scrollLeft = this.scrollLeft;
-    this.style.cursor = "grabbing";
+  isDragging = true;
+  startX = e.pageX - this.offsetLeft;
+  scrollLeft = this.scrollLeft;
+  this.style.cursor = "grabbing";
 }
 
 function handleMouseUp() {
-    isDragging = false;
-    document.querySelector('.slider-rotate').style.cursor = "grab";
+  isDragging = false;
+  document.querySelector('.slider-rotate').style.cursor = "grab";
 }
 
 function handleTouchMove(e) {
-    if (!isDragging) return;
-    var touch = e.touches[0];
-    var x = touch.pageX - this.offsetLeft;
-    var walk = (x - startX) * 1; // 스크롤 속도를 조정할 수 있습니다
-    this.scrollLeft = scrollLeft - walk;
+  if (!isDragging) return;
+  var touch = e.touches[0];
+  var x = touch.pageX - this.offsetLeft;
+  var walk = (x - startX) * 1;
+  this.scrollLeft = scrollLeft - walk;
 }
 
 function handleTouchStart(e) {
-    isDragging = true;
-    var touch = e.touches[0];
-    startX = touch.pageX - this.offsetLeft;
-    scrollLeft = this.scrollLeft;
-    this.style.cursor = "grabbing";
+  isDragging = true;
+  var touch = e.touches[0];
+  startX = touch.pageX - this.offsetLeft;
+  scrollLeft = this.scrollLeft;
+  this.style.cursor = "grabbing";
 }
 
 function handleTouchEnd() {
-    isDragging = false;
-    document.querySelector('.slider-rotate').style.cursor = "grab";
+  isDragging = false;
+  document.querySelector('.slider-rotate').style.cursor = "grab";
 }
 
 $(document).ready(function () {
-    var slider = document.querySelector('.slider-rotate');
+  var slider = document.querySelector('.slider-rotate');
 
-    slider.addEventListener('mousemove', handleMouseMove);
-    slider.addEventListener('mousedown', handleMouseDown);
-    slider.addEventListener('mouseup', handleMouseUp);
-    slider.addEventListener('mouseleave', handleMouseUp);
+  slider.addEventListener('mousemove', handleMouseMove);
+  slider.addEventListener('mousedown', handleMouseDown);
+  slider.addEventListener('mouseup', handleMouseUp);
+  slider.addEventListener('mouseleave', handleMouseUp);
 
-    slider.addEventListener('touchmove', handleTouchMove, { passive: false });
-    slider.addEventListener('touchstart', handleTouchStart, { passive: false });
-    slider.addEventListener('touchend', handleTouchEnd);
+  slider.addEventListener('touchmove', handleTouchMove, { passive: false });
+  slider.addEventListener('touchstart', handleTouchStart, { passive: false });
+  slider.addEventListener('touchend', handleTouchEnd);
 });
 
 $(document).on("mouseup touchend", function () {
-    isDragging = false;
+  isDragging = false;
 });

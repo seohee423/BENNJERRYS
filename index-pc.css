@@ -279,11 +279,10 @@
 
   .slider-rotate__container {
     position: relative;
-    width: 90%;
     height: 50vh;
+    height: 530px;
     visibility: hidden;
     margin: 0 auto;
-    /* background-color: #ddd; */
   }
 
   .slider-rotate {
@@ -434,8 +433,6 @@
     font-size: 12px;
     width: 70%;
   }
-
-  .flavors-wrapper .sticker-wrapper {}
 
   .flavors-wrapper .sticker-wrapper img {
     position: absolute;
