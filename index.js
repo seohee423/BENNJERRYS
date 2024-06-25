@@ -390,11 +390,11 @@ function handleTouchStart(e) {
     mx = touch.pageX - this.offsetLeft;
 }
 
-$(".flavors-slide-wrapper").on("mousemove", handleMouseMove);
-$(".flavors-slide-wrapper").on("mousedown", handleMouseDown);
+$(".slider-rotate").on("mousemove", handleMouseMove);
+$(".slider-rotate").on("mousedown", handleMouseDown);
 
-$(".flavors-slide-wrapper").on("touchmove", handleTouchMove);
-$(".flavors-slide-wrapper").on("touchstart", handleTouchStart);
+$(".slider-rotate").on("touchmove", handleTouchMove);
+$(".slider-rotate").on("touchstart", handleTouchStart);
 
 $(document).on("mouseup touchend", function () {
     mx = 0;
