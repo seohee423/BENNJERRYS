@@ -1,4 +1,4 @@
-# 벤엔제리스 웹 디자인&퍼블리싱 작업 일지 (240618 - 240625)
+# Ben & Jerry's 웹 디자인&퍼블리싱 작업 일지<br>(240618 - 240625)
 https://seohee423.github.io/BENNJERRYS/index.html
 
 ----
