@@ -76,25 +76,43 @@ $(document).on("mouseup touchend", function () {
 $(document).ready(function () {
   var currentTranslateX = 0;
   var slideWidth = 380;
-  var maxSlides = $('.business-img-wrapper').length;
-  var maxTranslateX = -(slideWidth * (maxSlides - 1));
+  var maxTranslateX = -1900;
+
+  function updateButtonState() {
+      if (currentTranslateX >= 0) {
+          $('.arrow-left').removeClass('enabled');
+      } else {
+          $('.arrow-left').addClass('enabled');
+      }
+
+      if (currentTranslateX <= maxTranslateX) {
+          $('.arrow-right').removeClass('enabled');
+      } else {
+          $('.arrow-right').addClass('enabled');
+      }
+  }
 
   $('.arrow-left').on('click', function (e) {
-    e.preventDefault();
-    if (currentTranslateX < 0) {
-      currentTranslateX += slideWidth;
-      $('.business-img-slide').css('transform', 'translateX(' + currentTranslateX + 'px)');
-    }
+      e.preventDefault();
+      if (currentTranslateX < 0) {
+          currentTranslateX += slideWidth;
+          $('.business-img-slide').css('transform', 'translateX(' + currentTranslateX + 'px)');
+          updateButtonState();
+      }
   });
 
   $('.arrow-right').on('click', function (e) {
-    e.preventDefault();
-    if (currentTranslateX > maxTranslateX) {
-      currentTranslateX -= slideWidth;
-      $('.business-img-slide').css('transform', 'translateX(' + currentTranslateX + 'px)');
-    }
+      e.preventDefault();
+      if (currentTranslateX > maxTranslateX) {
+          currentTranslateX -= slideWidth;
+          $('.business-img-slide').css('transform', 'translateX(' + currentTranslateX + 'px)');
+          updateButtonState();
+      }
   });
+
+  updateButtonState();
 });
+
 
 /* flavor 버튼 슬라이드(PC) */
 $(function () {
